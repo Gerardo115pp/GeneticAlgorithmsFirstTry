@@ -1,0 +1,78 @@
+/*
+ 
+      _                
+     / \   _ __  _ __  
+    / _ \ | '_ \| '_ \ 
+   / ___ \| |_) | |_) |
+  /_/   \_\ .__/| .__/ 
+          |_|   |_|    
+ 
+*/
+
+@import url('https://fonts.googleapis.com/css?family=Spartan&display=swap');
+
+body{
+  font-family: Spartan;
+  background: rgb(30, 30, 30);
+  color: white;
+}
+
+/*=============================================
+=            Titulo            =
+=============================================*/
+h1{
+  margin: 0;
+}
+
+#title-bar{
+  background: rgb(243, 133, 7);
+  padding: 2%;
+}
+
+
+
+/*=============================================
+=            Controls            =
+=============================================*/
+
+#input-problem-container{
+  width: 30%;
+  display: flex;
+  justify-content: space-around;
+  margin: 5% auto;
+}
+
+#start-btn{
+  cursor: pointer;
+  background: rgb(243, 133, 7);
+  padding: 2% 3%;
+  border-radius: 5px;
+}
+
+#problem{
+  font-family: Spartan;
+  color: rgb(243, 133, 7);
+  font-size: 1.3rem;
+  width: 70%;
+  background-color: rgb(30, 30, 30);
+  border: none;
+  border-bottom: 2px solid rgb(243, 133, 7);
+  padding: 1%;
+}
+
+
+
+/*=============================================
+=            solution            =
+=============================================*/
+#solution-data{
+  background-color: black;
+  padding: 5% 20%;
+}
+
+#solution-data div{
+  margin-top: 4%;
+}
+
+
+
