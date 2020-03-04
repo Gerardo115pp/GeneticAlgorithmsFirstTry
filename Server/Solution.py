@@ -9,7 +9,7 @@ class Solution:
         self.genoma = genoma if genoma else []
         if genoma:
             self.__calculateFitness()
-            if randint(0,100) < 35:
+            if randint(0,100) < 55:
                 self.__mutate()
         else:
             self.fitness_score = None

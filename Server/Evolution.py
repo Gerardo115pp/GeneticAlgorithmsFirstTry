@@ -6,13 +6,15 @@ class EvolutionException(Exception):
     pass
 
 class Evolution:
-    def __init__(self, coin_set=None):
-        Problem(coin_set)
+    def __init__(self, coin_set=None, max_chances=100):
+        if not Problem.singleton_problem:
+            Problem(coin_set)
         self.__population_size = 10
         self.population = self.__createInitialPopulation()
         self.best_fit = None
         self.__current_generation = 1
-        self.__same_best_chances = 50
+        self.max_chances = max_chances
+        self.__same_best_chances = self.max_chances
 
     @property
     def GenerationsNeed(self):
@@ -22,9 +24,9 @@ class Evolution:
         while True:
             self.__crossover()
             if self.__checkTermination():
-                print(f"Best fit: {self.best_fit.fitness_score}\nGenes: {self.best_fit.genoma}")
+                #print(f"Best fit: {self.best_fit.fitness_score}\nGenes: {self.best_fit.genoma}")
                 break
-            print(f"Developing generation {self.__current_generation} with best fit of {self.best_fit}")
+            #print(f"Developing generation {self.__current_generation} with best fit of {self.best_fit}")
         return self.best_fit    
 
     def __selectionOfTheFittests(self):
@@ -43,7 +45,7 @@ class Evolution:
         else:
             if current_best.fitness_score > self.best_fit.fitness_score:
                 self.best_fit = current_best
-                self.__same_best_chances = 50
+                self.__same_best_chances = self.max_chances
             else:
                 if not self.__same_best_chances:
                     return True
